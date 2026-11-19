@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mi Derecho, Mi Lugar · Registro de opciones educativas</title>
+<title>Ubica tu Prepa · No te quedes fuera</title>
 <meta name="description" content="Plataforma de registro de aspirantes y lista de preferencias de opciones educativas de tipo medio superior. Piloto.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23611232'/%3E%3Cpath d='M8 22V10h3l5 7 5-7h3v12h-3v-7l-5 7-5-7v7z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='https://apprende.jalisco.gob.mx/subsecretaria-media-superior/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.54.0' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23611232'/%3E%3Cpath d='M8 22V10h3l5 7 5-7h3v12h-3v-7l-5 7-5-7v7z' fill='%23fff'/%3E%3C/svg%3E">
 <style>
 /* ============================================================
-   Mi Derecho, Mi Lugar — hoja de estilo única
+   Ubica tu Prepa — hoja de estilo única
    Paleta institucional: guinda, oro, verde; base cálida neutra.
    ============================================================ */
 :root{
@@ -3783,7 +3783,7 @@ window.Comprobante = (function () {
     doc.color(97, 18, 50).rect(0, 0, 612, 6);
     doc.color(165, 127, 44).rect(0, 6, 612, 2);
     doc.color(0, 0, 0);
-    doc.texto(M, 26, "MI DERECHO, MI LUGAR", { size: 15, bold: true, color: GUINDA });
+    doc.texto(M, 26, "Ubica tu Prepa", { size: 15, bold: true, color: GUINDA });
     doc.texto(M, 45, "Registro de opciones educativas de tipo medio superior", { size: 9.5, color: GRIS });
     doc.texto(612 - M, 26, "Comprobante de registro", { size: 9.5, bold: true, align: "right", color: GUINDA });
     doc.texto(612 - M, 40, "Ciclo escolar " + DB.CONFIG.ciclo + " · " + DB.CONFIG.estado,
@@ -3838,7 +3838,7 @@ window.Comprobante = (function () {
   function pieDoc(doc) {
     doc.colorTrazo(214, 208, 204);
     doc.linea(M, 752, 612 - M, 752);
-    doc.texto(M, 758, "Documento generado por la plataforma Mi Derecho, Mi Lugar · " + fechaCorta(new Date().toISOString()),
+    doc.texto(M, 758, "Documento generado por la plataforma Ubica tu Prepa · " + fechaCorta(new Date().toISOString()),
       { size: 7.5, color: GRIS });
     doc.texto(612 - M, 758, "Ejercicio de demostración", { size: 7.5, align: "right", color: GRIS });
     void LINEA;
@@ -4212,14 +4212,14 @@ window.App = (function () {
         : "") +
       "</div>" +
       '<header class="cabecera"><div class="cabecera-in">' + logos() +
-      '<div class="marca"><div class="marca-txt"><b>Mi Derecho, Mi Lugar</b>' +
+      '<div class="marca"><div class="marca-txt"><b>Ubica tu Prepa</b>' +
       "<span>Registro de opciones educativas</span></div></div>" +
       "</div></header>";
   }
 
   function pie() {
     return '<footer class="pie"><div class="pie-in">' +
-      "<div><b>Mi Derecho, Mi Lugar</b> · Registro de opciones educativas de tipo medio superior<br>" +
+      "<div><b>Ubica tu Prepa</b> · Registro de opciones educativas de tipo medio superior<br>" +
       "Ciclo escolar " + DB.CONFIG.ciclo + " · Estado de " + DB.CONFIG.estado + " (piloto)</div>" +
       '<div><a href="#" data-ir="privacidad">Aviso de privacidad</a> · ' +
       '<a href="#" data-ir="ayuda">Ruta de atención</a>' +
@@ -4692,7 +4692,7 @@ window.App = (function () {
       "<span>modo demostración</span></div>" +
       '<div class="buzon-cuerpo">' +
         '<p class="chico gris mb8">Asunto: ' +
-        esc(asunto || "Confirma tu registro en Mi Derecho, Mi Lugar") + "</p>" +
+        esc(asunto || "Confirma tu registro en Ubica tu Prepa") + "</p>" +
         '<div class="codigo">' + esc(codigo) + "</div>" +
         '<p class="chico gris mb0 mt16">En la versión con servidor este código llega por correo ' +
         "y no se muestra en pantalla.</p>" +
@@ -7327,7 +7327,7 @@ window.App = (function () {
     /* --- Resumen --- */
     var resumen = {
       nombre: "Resumen",
-      titulo: "Mi Derecho, Mi Lugar · " + DB.CONFIG.estado + " · ciclo " + DB.CONFIG.ciclo,
+      titulo: "Ubica tu Prepa · " + DB.CONFIG.estado + " · ciclo " + DB.CONFIG.ciclo,
       encabezados: ["Indicador", "Valor"],
       anchos: [46, 18],
       filas: [
@@ -9201,9 +9201,9 @@ window.CARRUSEL = (function () {
   var esc = function (s) { return window.UI.esc(s); };
 
   var SLIDES = [
-    { tipo: "video", titulo: "Video de presentación de Mi derecho, mi lugar" },
+    { tipo: "video", titulo: "Video de presentación de Ubica tu Prepa" },
     { tipo: "banner", titulo: "Convocatoria 2027",
-      cabecera: "Mi derecho, mi lugar", lema: "¡Donde siempre tendrás tu lugar!",
+      cabecera: "Ubica tu Prepa", lema: "¡Donde siempre tendrás tu lugar!",
       franja: "Consulta la convocatoria 2027 del proceso de asignación a la Educación Media Superior de Jalisco",
       texto: "Próximamente: en este portal podrás realizar tu registro para participar en el proceso de asignación 2027.",
       grande: "Convocatoria 2027", boton: "Convocatoria", liga: "documentos/convocatoria.pdf",
@@ -9238,7 +9238,7 @@ window.CARRUSEL = (function () {
   }
 
   function html() {
-    return '<section class="car" id="car" role="region" aria-roledescription="carrusel" aria-label="Video y avisos de Mi derecho, mi lugar" tabindex="-1">' +
+    return '<section class="car" id="car" role="region" aria-roledescription="carrusel" aria-label="Video y avisos de Ubica tu Prepa" tabindex="-1">' +
       '<div class="car-pista" id="car-pista">' + SLIDES.map(slideHtml).join("") + "</div>" +
       '<button type="button" class="car-flecha car-ant" id="car-ant" aria-label="Diapositiva anterior">‹</button>' +
       '<button type="button" class="car-flecha car-sig" id="car-sig" aria-label="Diapositiva siguiente">›</button>' +
