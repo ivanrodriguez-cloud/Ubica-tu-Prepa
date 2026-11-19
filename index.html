@@ -2528,7 +2528,7 @@ window.DB = (function () {
   function nuevoFolio() {
     var s = estado();
     s.consecutivo = (s.consecutivo || 0) + 1;
-    var base = "MIC-" + CONFIG.ventana.inicio.slice(0, 4) + "-" + ("000000" + s.consecutivo).slice(-6);
+    var base = "JAL-" + CONFIG.ventana.inicio.slice(0, 4) + "-" + ("000000" + s.consecutivo).slice(-6);
     var suma = 0;
     for (var i = 0; i < base.length; i++) suma += base.charCodeAt(i) * (i + 1);
     return base + "-" + "ABCDEFGHJKLMNPQRSTUVWXYZ"[suma % 24];
@@ -4411,7 +4411,7 @@ window.App = (function () {
       '<form id="f-folio" novalidate><div class="fila">' +
         '<div class="campo mb0" style="flex:1 1 230px"><label for="cf-folio">Tu folio</label>' +
         '<input type="text" id="cf-folio" class="mayus mono" autocomplete="off" ' +
-        'placeholder="MIC-2026-000000-X"></div>' +
+        'placeholder="JAL-2026-000000-X"></div>' +
         '<div class="campo mb0" style="flex:1 1 230px"><label for="cf-curp">Tu CURP</label>' +
         '<input type="text" id="cf-curp" class="mayus mono" maxlength="18" autocomplete="off" ' +
         'placeholder="18 letras y números"></div>' +
@@ -4439,7 +4439,7 @@ window.App = (function () {
       var folio = inp.value.trim(), cu = curp.value.trim();
       if (!folio) {
         res.innerHTML = avisoHTML("alerta", "Escribe tu folio. Viene en tu comprobante, " +
-          "arriba, y se ve así: <b class=\"mono\">MIC-2026-000123-K</b>.");
+          "arriba, y se ve así: <b class=\"mono\">JAL-2026-000123-K</b>.");
         return;
       }
       if (cu.length !== 18) {
@@ -7897,7 +7897,7 @@ window.Semilla = (function () {
         c1: respuestas(CAT.C1),
         opciones: elegidas,
         estado: completo ? "completo" : "borrador",
-        folio: completo ? "MIC-2026-" + ("000000" + consecutivo).slice(-6) + "-D" : null,
+        folio: completo ? "JAL-2026-" + ("000000" + consecutivo).slice(-6) + "-D" : null,
         enviado: completo ? creado : null,
         avance: { c1: { hechas: 13, total: 15 } }
       };
