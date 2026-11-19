@@ -3711,7 +3711,7 @@ window.BUSCA = (function () {
 window.Comprobante = (function () {
   "use strict";
 
-  var GUINDA = [97, 18, 50], ORO = [165, 127, 44], GRIS = [110, 105, 107], LINEA = [214, 208, 204];
+  var NARANJA = [255, 131, 0], GRIS = [70, 80, 85], ROJO = [198, 0, 76], LINEA = [70, 80, 85];
   var M = 48, ANCHO = 612 - M * 2;
 
   function generar(A, opcion) {
@@ -3720,7 +3720,7 @@ window.Comprobante = (function () {
     var y = encabezado(doc, 1);
 
     /* --- folio --- */
-    doc.color(97, 18, 50).rect(M, y, ANCHO, 58); doc.color(0, 0, 0);
+    doc.color(198, 0, 76).rect(M, y, ANCHO, 58); doc.color(0, 0, 0);
     doc.texto(M + 18, y + 12, "FOLIO DE REGISTRO", { size: 8, color: [230, 210, 218] });
     doc.texto(M + 18, y + 25, A.folio || "—", { size: 20, bold: true, color: [255, 255, 255] });
     doc.texto(612 - M - 18, y + 16, "Registro completo", { size: 9, align: "right", color: [255, 255, 255] });
@@ -3783,9 +3783,9 @@ window.Comprobante = (function () {
     doc.color(97, 18, 50).rect(0, 0, 612, 6);
     doc.color(165, 127, 44).rect(0, 6, 612, 2);
     doc.color(0, 0, 0);
-    doc.texto(M, 26, "Ubica tu Prepa", { size: 15, bold: true, color: GUINDA });
+    doc.texto(M, 26, "Ubica tu Prepa", { size: 15, bold: true, color: NARANJA });
     doc.texto(M, 45, "Registro de opciones educativas de tipo medio superior", { size: 9.5, color: GRIS });
-    doc.texto(612 - M, 26, "Comprobante de registro", { size: 9.5, bold: true, align: "right", color: GUINDA });
+    doc.texto(612 - M, 26, "Comprobante de registro", { size: 9.5, bold: true, align: "right", color: NARANJA });
     doc.texto(612 - M, 40, "Ciclo escolar " + DB.CONFIG.ciclo + " · " + DB.CONFIG.estado,
       { size: 9, align: "right", color: GRIS });
     doc.texto(612 - M, 53, "Página " + pagina, { size: 8, align: "right", color: GRIS });
@@ -3795,7 +3795,7 @@ window.Comprobante = (function () {
 
   function titulo(doc, y, t) {
     doc.color(97, 18, 50).rect(M, y + 2, 3, 12); doc.color(0, 0, 0);
-    doc.texto(M + 10, y, t, { size: 11, bold: true, color: GUINDA });
+    doc.texto(M + 10, y, t, { size: 11, bold: true, color: NARANJA });
     return y + 22;
   }
 
@@ -3823,11 +3823,11 @@ window.Comprobante = (function () {
     var nc = lc.length + (o.altaDemanda ? 1 : 0);
     var alto = Math.max(lp.length, nc) * 11 + 8;
     var x = M + 6;
-    doc.texto(x, y, String(n), { size: 9.5, bold: true, color: GUINDA }); x += COLS[0];
+    doc.texto(x, y, String(n), { size: 9.5, bold: true, color: NARANJA }); x += COLS[0];
     lp.forEach(function (l, k) { doc.texto(x, y + k * 11, l, { size: 9 }); });
     x += COLS[1];
     lc.forEach(function (l, k) { doc.texto(x, y + k * 11, l, { size: 9 }); });
-    if (o.altaDemanda) doc.texto(x, y + lc.length * 11, "Alta demanda", { size: 8, bold: true, color: ORO });
+    if (o.altaDemanda) doc.texto(x, y + lc.length * 11, "Alta demanda", { size: 8, bold: true, color: ROJO });
     x += COLS[2];
     doc.texto(x, y, o.turno, { size: 9 });
     doc.colorTrazo(230, 226, 222);
